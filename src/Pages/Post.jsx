@@ -12,7 +12,7 @@ const PostList = () => {
 
   const fetchPosts = async () => {
     try {
-      const response = await axios.get("http://localhost:8008/posts", {
+      const response = await axios.get("https://evaluation4backend-production.up.railway.app/posts", {
         withCredentials: true,
       });
       setPosts(response.data.posts);
@@ -23,7 +23,7 @@ const PostList = () => {
 
   const handleDeletePost = async (postId) => {
     try {
-      await axios.delete(`http://localhost:8008/posts/delete/${postId}`, {
+      await axios.delete(`https://evaluation4backend-production.up.railway.app/posts/delete/${postId}`, {
         withCredentials: true,
       });
       setPosts(posts.filter((post) => post._id !== postId));

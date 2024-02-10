@@ -16,9 +16,10 @@ export default function Register() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8008/users/register",
-        userData,{
-            withCredentials: true
+        "https://evaluation4backend-production.up.railway.app/users/register",
+        userData,
+        {
+          withCredentials: true,
         }
       );
       console.log(response.data);
